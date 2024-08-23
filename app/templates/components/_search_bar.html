@@ -1,4 +1,4 @@
-<form id='search-form' method="GET" class="form" action="{% url 'fiis_list' %}">
+<form id='search-form' method="GET" class="form" action="{% url 'fiis_list' %}?segment={{ selected_segment }}">
     <input type="text" name="search" placeholder="Buscar...">
     <button type="submit">Buscar</button>
 </form>
@@ -10,4 +10,5 @@
           <option value="{{ segment }}">{{ segment }}</option>
       {% endfor %}
     </select>
+    <button type="submit">Buscar</button>
 </form>
