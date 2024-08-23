@@ -239,5 +239,5 @@ class ScraperFii(Scraper):
 if __name__ == '__main__':
     start = datetime.now()
     scraper = ScraperFii('https://investidor10.com.br/fiis/')
-    scraper.run()
+    scraper.run() 
     print("Time: ", datetime.now() - start)

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Fundos{% endblock title %}
+
+{% block content %}
+<div class="container">
+    {% include 'components/_search_bar.html' %}
+    <div class="row justify-content-center">
+        {% for fii in fiis %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <a href="{% url 'fiis_detail' fii.pk %}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ fii.name.upper }}</h5>
+                            <p class="card-text">R$ {{ fii.cards_ticker.cotação }} Segmento: {{ fii.indicators.segmento }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+<form id='search-form' method="GET" class="form" action="{% url 'fiis_list' %}">
+    <input type="text" name="search" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+</form>
+
+<form id="brand-form" method="get" class="form" action="{% url 'fiis_list' %}">
+    <select id="brand-select" name="segment"  >
+      <option value="" {% if not selected_brand %}selected="selected"{% endif %}>Selecione um segmento</option>
+      {% for segment in segments %}
+          <option value="{{ segment }}">{{ segment }}</option>
+      {% endfor %}
+    </select>
+</form>
